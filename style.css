@@ -1,0 +1,280 @@
+:root {
+  --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+  --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+  --Grayish-Blue: hsl(212, 23%, 69%);
+  --Light-Grayish-Blue:hsl(210, 46%, 95%);
+
+  --black-color: #000000;
+  --white-color: #FFFFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+}
+
+a {
+  color: var(--black-color);
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Light-Grayish-Blue);
+}
+
+/* Card =========== */
+
+.card {
+  width: 327px;
+  border-radius: 10px;
+  background-color: var(--white-color);
+  box-shadow: 0px 40px 40px -10px rgba(201, 213, 225, 0.503415);
+  position: relative;
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
+.card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 100% 25%;
+}
+
+.card-info {
+  padding: 36px 32px 20px 32px;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  color: var(--Very-Dark-Grayish-Blue);
+  margin-bottom: 12px;
+}
+
+.card-description {
+  font-size: 13px;
+  color: var(--Grayish-Blue);
+  font-weight: 200;
+  margin-bottom: 52px;
+  letter-spacing: 0.12px;
+}
+
+.card-info-user {
+  display: grid;
+  grid-template-columns: min-content max-content 1fr;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.card-user-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.card-user-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card-user-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-user-name {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12px;
+  line-height: 20px;
+  color: var(--Very-Dark-Grayish-Blue);
+}
+
+.card-date-publication {
+  font-size: 13px;
+  font-weight: 200;
+  letter-spacing: 0.12px;
+  line-height: 20px;
+  color: var(--Grayish-Blue);
+}
+
+.card-share {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Light-Grayish-Blue);
+  justify-self: flex-end;
+}
+
+.card-share-tooltip {
+  visibility: hidden;
+  position: absolute;
+  height: 80px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: min-content max-content 1fr;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Very-Dark-Grayish-Blue);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 0 0 10px 10px;
+  padding: 0 32px;
+}
+
+.card-share-tooltip p {
+  font-weight: 200;
+  font-size: 13px;
+  line-height: 13px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--Grayish-Blue);
+  margin-right: 21px;
+}
+
+.social-media-tooltip {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-auto-flow: column;
+  gap: 16px;
+}
+
+.social-media-tooltip img {
+  cursor: pointer;
+}
+
+.icon-share-tooltip {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  justify-self: flex-end;
+  align-items: center;
+  background-color: var(--Desaturated-Dark-Blue);
+}
+
+.card-share:hover .card-share-tooltip {
+  visibility: visible;
+}
+
+.triangle {
+  display: none;
+}
+
+@media (min-width: 1280px) {
+  .card {
+    width: 730px;
+    height: 280px;
+    display: flex;
+  }
+
+  .card-image {
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+  }
+
+  .card-image img {
+    object-position: left 20%;
+  }
+
+  .card-info {
+    padding: 32px 40px;
+  }
+
+  .card-title {
+    font-size: 20px;
+    letter-spacing: 0.25px;
+    line-height: 28px;
+  }
+
+  .card-description {
+    margin-bottom: 20px;
+  }
+
+  .card-share {
+    position: relative;
+    transition-delay: .2s;
+    cursor: pointer;
+  }
+
+  .icon-share {
+    position: absolute;
+  }
+
+  .icon-share path {
+    transition-delay: .2s;
+  }
+
+  .card-share:hover .icon-share path {
+    transition-delay: 0s;
+    fill: var(--white-color);
+  }
+
+  .card-share:hover {
+    transition-delay: 0s;
+    background-color: var(--Desaturated-Dark-Blue);
+  }
+
+  .card-share-tooltip {
+    width: 248px;
+    height: 55px;
+    border-radius: 10px;
+    bottom: 66px;
+    position: relative;
+    transition-duration: .2s;
+  }
+
+  .card-share-tooltip.active {
+    visibility: visible;
+  }
+
+  .icon-share-tooltip {
+    display: none;
+  }
+
+  .triangle {
+    display: block;
+    width: 17px;
+    height: 17px;
+    background-color: var(--Very-Dark-Grayish-Blue);
+    position: absolute;
+    bottom: -8.5px;
+    left: calc(50% - 17px / 2);
+    transform: rotate(45deg);
+  }
+}
